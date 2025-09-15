@@ -1,10 +1,11 @@
 import './App.css';
-import { Header } from './components';
+import { Header, Transfer } from './components';
 
 function App() {
   return (
     <>
       <Header />
+      <Transfer />
     </>
   );
 }

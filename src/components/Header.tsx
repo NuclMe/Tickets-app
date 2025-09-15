@@ -9,6 +9,7 @@ export const Header = () => {
       sx={{
         display: 'flex',
         justifyContent: 'center',
+        mb: '50px',
       }}
     >
       <Link

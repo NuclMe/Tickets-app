@@ -1,3 +1,4 @@
 import { Header } from './Header';
+import { Transfer } from './Transfer';
 
-export { Header };
+export { Header, Transfer };
