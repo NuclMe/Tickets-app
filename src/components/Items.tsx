@@ -54,9 +54,9 @@ export const Items = () => {
         marginTop: '20px',
       }}
     >
-      {items.map((i) => {
-        return <Item key={i.price} {...i} />;
-      })}
+      {items.map((i) => (
+        <Item key={i.price} {...i} />
+      ))}
     </Box>
   );
 };

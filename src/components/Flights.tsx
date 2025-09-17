@@ -36,6 +36,9 @@ export const Flights = () => {
             transition: 'none',
             '&:hover': { borderColor: '#00bfff' },
             '&:focus': { outline: 'none' },
+            '@media (max-width: 768px)': {
+              fontSize: '12px',
+            },
           }}
         />
         <Tab
@@ -53,6 +56,9 @@ export const Flights = () => {
             color: selectedTab === 1 ? 'white !important' : undefined,
             '&:focus': { outline: 'none' },
             '&:hover': { borderColor: '#00bfff' },
+            '@media (max-width: 768px)': {
+              fontSize: '12px',
+            },
           }}
         />
       </Tabs>

@@ -1,13 +1,12 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import { TableWrapper } from './TableWrapper';
+import { numberWithSpaces } from '../utils';
+import Typography from '@mui/material/Typography';
 
 export const Item = (props) => {
   const { price, carrier, segments } = props;
-  function numberWithSpaces(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
-  }
+
   return (
     <Box
       key={price}
@@ -26,7 +25,14 @@ export const Item = (props) => {
         }}
       >
         <Typography
-          sx={{ fontWeight: 'bold', color: '#1976d2', fontSize: '24px' }}
+          sx={{
+            fontWeight: 'bold',
+            color: '#1976d2',
+            fontSize: '24px',
+            '@media (max-width: 768px)': {
+              fontSize: '18px',
+            },
+          }}
         >
           {numberWithSpaces(price)} Р
         </Typography>

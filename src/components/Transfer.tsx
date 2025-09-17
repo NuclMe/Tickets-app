@@ -27,11 +27,22 @@ export const Transfer = () => {
           marginLeft: '20px',
           marginBottom: '10px',
           fontSize: '16px',
+          '@media (max-width: 768px)': {
+            fontSize: '14px',
+          },
         }}
       >
         КОЛИЧЕСТВО ПЕРЕСАДОК
       </Typography>
-      <FormGroup sx={{ width: '100%', overflow: 'hidden' }}>
+      <FormGroup
+        sx={{
+          width: '100%',
+          overflow: 'hidden',
+          '@media (max-width: 768px)': {
+            fontSize: '10px',
+          },
+        }}
+      >
         {TRANSFER_OPTIONS.map((option) => (
           <FormControlLabel
             key={option.value}
@@ -54,6 +65,11 @@ export const Transfer = () => {
               marginLeft: '0px',
               '&:hover': {
                 backgroundColor: 'rgba(173, 216, 230, 0.4)',
+              },
+              '@media (max-width: 768px)': {
+                '& .MuiTypography-root': {
+                  fontSize: '14px',
+                },
               },
             }}
           />
