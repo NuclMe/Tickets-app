@@ -19,6 +19,7 @@ export const Transfer = () => {
         backgroundColor: 'white',
         flex: '1',
         padding: '20px 0',
+        maxHeight: '280px',
       }}
     >
       <Typography
