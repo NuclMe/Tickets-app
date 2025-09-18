@@ -1,20 +1,22 @@
-import { TicketActionTypes } from '../../store/actionTypes';
-
+import { types } from './types';
 const initialState = {
   tickets: [],
   loading: false,
   error: null,
+  selectedTransfer: 'all',
 };
 
-export default function ticketReducer(state = initialState, action) {
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case TicketActionTypes.FETCH_TICKETS:
+    case types.FETCH_TICKETS:
       return { ...state, loading: true, error: null };
-    case TicketActionTypes.FETCH_TICKETS_SUCCESS:
+    case types.FETCH_TICKETS_SUCCESS:
       return { ...state, loading: false, tickets: action.payload };
-    case TicketActionTypes.FETCH_TICKETS_ERROR:
+    case types.FETCH_TICKETS_ERROR:
       return { ...state, loading: false, error: action.error };
+    case types.SET_TRANSFER_FILTER:
+      return { ...state, selectedTransfer: action.payload };
     default:
       return state;
   }
-}
+};

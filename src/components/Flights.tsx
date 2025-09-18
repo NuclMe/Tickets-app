@@ -1,35 +1,12 @@
-import React, { useEffect } from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchTickets } from '../redux/actions/ticketActions';
-import {
-  Routes,
-  Route,
-  Link,
-  useLocation,
-  useNavigate,
-} from 'react-router-dom';
-import { Items } from './Items';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 export const Flights = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchTickets());
-  }, [dispatch]);
-  const tickets = useSelector((state) => state.ticket.tickets);
-  const cheapestTickets = [...tickets].sort((a, b) => a.price - b.price);
-  const fastestTickets = [...tickets].sort(
-    (a, b) =>
-      a.segments[0].duration +
-      a.segments[1].duration -
-      (b.segments[0].duration + b.segments[1].duration)
-  );
   const location = useLocation();
   const navigate = useNavigate();
   const tabIndex = location.pathname === '/fastest' ? 1 : 0;
-
   const handleChange = (event, newValue) => {
     if (newValue === 0) {
       navigate('/cheapest');
@@ -94,10 +71,6 @@ export const Flights = () => {
           }}
         />
       </Tabs>
-      <Routes>
-        <Route path="/cheapest" element={<Items items={cheapestTickets} />} />
-        <Route path="/fastest" element={<Items items={fastestTickets} />} />
-      </Routes>
     </Box>
   );
 };

@@ -1,5 +1,5 @@
 import { all, fork } from 'redux-saga/effects';
-import { ticketSaga } from '../redux/sagas/ticketSaga';
+import { ticketSaga } from './ducks/tickets';
 
 export function* rootSaga() {
   yield all([fork(ticketSaga)]);

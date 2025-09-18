@@ -1,10 +1,7 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
-import { TicketActionTypes } from '../../store/actionTypes';
-import {
-  fetchTicketsSuccess,
-  fetchTicketsError,
-} from '../actions/ticketActions';
+import { types } from './types';
+import { fetchTicketsSuccess, fetchTicketsError } from './actions';
 
 function* fetchTicketsSaga() {
   try {
@@ -32,5 +29,5 @@ function* fetchTicketsSaga() {
 }
 
 export function* ticketSaga() {
-  yield takeLatest(TicketActionTypes.FETCH_TICKETS, fetchTicketsSaga);
+  yield takeLatest(types.FETCH_TICKETS, fetchTicketsSaga);
 }
