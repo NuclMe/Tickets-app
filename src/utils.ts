@@ -7,6 +7,6 @@ export function getFlightTimeRange(date: string, duration: number) {
   return `${startStr} - ${endStr}`;
 }
 
-export function numberWithSpaces(x) {
+export function numberWithSpaces(x: number) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 }

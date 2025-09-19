@@ -1,41 +1,31 @@
-import { useEffect } from 'react';
-import { Header, Transfer, Flights } from './components';
 import Box from '@mui/material/Box';
-import styled from 'styled-components';
-import { GlobalStyles } from './GlobalStyles';
-import { device } from './const';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import type { FC } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchTickets } from './redux/ducks/tickets';
-import { Items } from './components/Items';
-import { selectFilteredTickets } from './redux/ducks/tickets';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
-const RootContainer = styled.div`
-  padding: 2rem;
-  background: #d3d3d3;
-`;
-const MainContentWrapper = styled.div`
-  display: flex;
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+import { Header, Transfer, Flights, Items } from './components';
 
-  @media ${device.tablet} {
-    flex-direction: column;
-  }
-`;
+import { GlobalStyles } from './GlobalStyles';
+import {
+  fetchTickets,
+  selectFilteredTickets,
+} from './redux/ducks/tickets/tickets';
+import { MainContentWrapper, RootContainer } from './styledVars';
+import type { ITicket } from './types';
 
-export const App = () => {
+export const App: FC = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchTickets());
   }, [dispatch]);
+
   const filteredTickets = useSelector(selectFilteredTickets);
 
-  const cheapestTickets = [...filteredTickets].sort(
+  const cheapestTickets: ITicket[] = [...filteredTickets].sort(
     (a, b) => a.price - b.price
   );
-  const fastestTickets = [...filteredTickets].sort(
+  const fastestTickets: ITicket[] = [...filteredTickets].sort(
     (a, b) =>
       a.segments[0].duration +
       a.segments[1].duration -

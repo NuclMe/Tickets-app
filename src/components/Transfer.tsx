@@ -1,18 +1,21 @@
-import React from 'react';
-import { Formik, Form, Field } from 'formik';
-import { useDispatch, useSelector } from 'react-redux';
-import { setTransferFilter } from '../redux/ducks/tickets/actions';
-import { TRANSFER_OPTIONS } from '../const';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import FormGroup from '@mui/material/FormGroup';
 import Radio from '@mui/material/Radio';
+import Typography from '@mui/material/Typography';
+import { Formik, Form, Field } from 'formik';
+import type { FC } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-export const Transfer = () => {
+import { TRANSFER_OPTIONS } from '../const';
+import { setTransferFilter } from '../redux/ducks/tickets/tickets';
+import type { RootState } from '../redux/root-reducer';
+import { device, fontSizes } from '../styledVars';
+
+export const Transfer: FC = () => {
   const dispatch = useDispatch();
   const selectedTransfer = useSelector(
-    (state) => state.ticket.selectedTransfer
+    (state: RootState) => state.tickets.selectedTransfer
   );
   return (
     <Box
@@ -34,9 +37,9 @@ export const Transfer = () => {
         sx={{
           marginLeft: '20px',
           marginBottom: '10px',
-          fontSize: '16px',
-          '@media (max-width: 768px)': {
-            fontSize: '14px',
+          fontSize: fontSizes.base,
+          [`${device.tablet}`]: {
+            fontSize: fontSizes.xs,
           },
         }}
       >
@@ -79,9 +82,9 @@ export const Transfer = () => {
                     '&:hover': {
                       backgroundColor: 'rgba(173, 216, 230, 0.4)',
                     },
-                    '@media (max-width: 768px)': {
+                    [`${device.tablet}`]: {
                       '& .MuiTypography-root': {
-                        fontSize: '14px',
+                        fontSize: fontSizes.xs,
                       },
                     },
                   }}

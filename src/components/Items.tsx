@@ -1,8 +1,11 @@
-import React from 'react';
 import Box from '@mui/material/Box';
+import type { FC } from 'react';
+
+import type { ITicket } from '../types';
+
 import { Item } from './Item';
 
-export const Items = ({ items = [] }) => (
+export const Items: FC<{ items: ITicket[] }> = ({ items = [] }) => (
   <Box
     sx={{
       display: 'flex',

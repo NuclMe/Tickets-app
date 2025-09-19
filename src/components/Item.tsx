@@ -1,10 +1,14 @@
-import React from 'react';
 import Box from '@mui/material/Box';
-import { TableWrapper } from './TableWrapper';
-import { numberWithSpaces } from '../utils';
 import Typography from '@mui/material/Typography';
+import type { FC } from 'react';
 
-export const Item = ({ price, carrier, segments }) => (
+import { device, fontSizes, colors } from '../styledVars';
+import type { ITicket } from '../types';
+import { numberWithSpaces } from '../utils';
+
+import { TableWrapper } from './TableWrapper';
+
+export const Item: FC<ITicket> = ({ price, carrier, segments }) => (
   <Box
     key={price}
     sx={{
@@ -24,10 +28,10 @@ export const Item = ({ price, carrier, segments }) => (
       <Typography
         sx={{
           fontWeight: 'bold',
-          color: '#1976d2',
-          fontSize: '24px',
-          '@media (max-width: 768px)': {
-            fontSize: '18px',
+          color: colors.primary,
+          fontSize: fontSizes.large,
+          [`${device.tablet}`]: {
+            fontSize: fontSizes.medium,
           },
         }}
       >

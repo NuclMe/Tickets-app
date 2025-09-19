@@ -1,12 +1,15 @@
-import React from 'react';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import type { FC } from 'react';
+
+import { device, fontSizes, colors } from '../styledVars';
+import type { ISegment } from '../types';
 import { getFlightTimeRange } from '../utils';
 
-export const TableWrapper = ({ segments }) => (
+export const TableWrapper: FC<{ segments: ISegment }> = ({ segments }) => (
   <Table
     sx={{
       [`& .${tableCellClasses.root}`]: {
@@ -22,9 +25,9 @@ export const TableWrapper = ({ segments }) => (
         <TableCell
           align="left"
           sx={{
-            color: 'grey',
-            '@media (max-width: 768px)': {
-              fontSize: '12px',
+            color: colors.grey,
+            [`${device.tablet}`]: {
+              fontSize: fontSizes.xs,
             },
           }}
         >
@@ -33,9 +36,9 @@ export const TableWrapper = ({ segments }) => (
         <TableCell
           align="center"
           sx={{
-            color: 'grey',
-            '@media (max-width: 768px)': {
-              fontSize: '12px',
+            color: colors.grey,
+            [`${device.tablet}`]: {
+              fontSize: fontSizes.xs,
             },
           }}
         >
@@ -44,9 +47,9 @@ export const TableWrapper = ({ segments }) => (
         <TableCell
           align="right"
           sx={{
-            color: 'grey',
-            '@media (max-width: 768px)': {
-              fontSize: '12px',
+            color: colors.grey,
+            [`${device.tablet}`]: {
+              fontSize: fontSizes.xs,
             },
           }}
         >
@@ -59,8 +62,8 @@ export const TableWrapper = ({ segments }) => (
         <TableCell
           align="left"
           sx={{
-            '@media (max-width: 768px)': {
-              fontSize: '12px',
+            [`${device.tablet}`]: {
+              fontSize: fontSizes.xs,
             },
           }}
         >
@@ -69,8 +72,8 @@ export const TableWrapper = ({ segments }) => (
         <TableCell
           align="center"
           sx={{
-            '@media (max-width: 768px)': {
-              fontSize: '12px',
+            [`${device.tablet}`]: {
+              fontSize: fontSizes.xs,
             },
           }}
         >
@@ -79,8 +82,8 @@ export const TableWrapper = ({ segments }) => (
         <TableCell
           align="right"
           sx={{
-            '@media (max-width: 768px)': {
-              fontSize: '12px',
+            [`${device.tablet}`]: {
+              fontSize: fontSizes.xs,
             },
           }}
         >

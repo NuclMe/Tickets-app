@@ -1,13 +1,16 @@
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
+import Tab from '@mui/material/Tab';
+import Tabs from '@mui/material/Tabs';
+import type { FC } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
-export const Flights = () => {
+import { device, fontSizes, colors } from '../styledVars';
+
+export const Flights: FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const tabIndex = location.pathname === '/fastest' ? 1 : 0;
-  const handleChange = (event, newValue) => {
+  const handleChange = (_: React.SyntheticEvent, newValue: number) => {
     if (newValue === 0) {
       navigate('/cheapest');
     } else {
@@ -21,7 +24,7 @@ export const Flights = () => {
         value={tabIndex}
         onChange={handleChange}
         sx={{
-          backgroundColor: 'white',
+          backgroundColor: `${colors.white}`,
           borderRadius: '5px',
         }}
       >
@@ -33,18 +36,18 @@ export const Flights = () => {
           sx={{
             width: '50%',
             maxWidth: '50%',
-            borderTop: '1px solid #000',
-            borderLeft: '1px solid #000',
-            borderBottom: '1px solid #000',
-            backgroundColor: tabIndex === 0 ? '#00bfff' : undefined,
+            borderTop: `1px solid ${colors.black}`,
+            borderLeft: `1px solid ${colors.black}`,
+            borderBottom: `1px solid ${colors.black}`,
+            backgroundColor: tabIndex === 0 ? `${colors.lightBlue}` : undefined,
             color: tabIndex === 0 ? 'white !important' : undefined,
-            borderColor: tabIndex === 0 ? '#00bfff' : undefined,
+            borderColor: tabIndex === 0 ? `${colors.lightBlue}` : undefined,
             boxShadow: 'none',
             transition: 'none',
-            '&:hover': { borderColor: '#00bfff' },
+            '&:hover': { borderColor: `${colors.lightBlue}` },
             '&:focus': { outline: 'none' },
-            '@media (max-width: 768px)': {
-              fontSize: '12px',
+            [`${device.tablet}`]: {
+              fontSize: fontSizes.small,
             },
           }}
         />
@@ -56,17 +59,17 @@ export const Flights = () => {
           sx={{
             width: '50%',
             maxWidth: '50%',
-            borderTop: '1px solid #000',
-            borderRight: '1px solid #000',
-            borderBottom: '1px solid #000',
+            borderTop: `1px solid ${colors.black}`,
+            borderRight: `1px solid ${colors.black}`,
+            borderBottom: `1px solid ${colors.black}`,
             boxShadow: 'none',
             transition: 'none',
-            backgroundColor: tabIndex === 1 ? '#00bfff' : undefined,
+            backgroundColor: tabIndex === 1 ? `${colors.lightBlue}` : undefined,
             color: tabIndex === 1 ? 'white !important' : undefined,
             '&:focus': { outline: 'none' },
-            '&:hover': { borderColor: '#00bfff' },
-            '@media (max-width: 768px)': {
-              fontSize: '12px',
+            '&:hover': { borderColor: `${colors.lightBlue}` },
+            [`${device.tablet}`]: {
+              fontSize: fontSizes.small,
             },
           }}
         />

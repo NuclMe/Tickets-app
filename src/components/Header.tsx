@@ -1,9 +1,11 @@
-import React from 'react';
-import airplane from '../assets/airplane.svg';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
+import type { FC } from 'react';
 
-export const Header = () => (
+import airplane from '../assets/airplane.svg';
+import { colors } from '../styledVars';
+
+export const Header: FC = () => (
   <Box
     sx={{
       display: 'flex',
@@ -14,7 +16,7 @@ export const Header = () => (
     <Link
       href="#"
       sx={{
-        backgroundColor: '#2196f3',
+        backgroundColor: `${colors.blue}`,
         borderRadius: '50%',
         padding: '15px',
         display: 'flex',
