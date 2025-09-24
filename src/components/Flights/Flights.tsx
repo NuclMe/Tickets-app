@@ -4,7 +4,7 @@ import Tabs from '@mui/material/Tabs';
 import type { FC } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
-import { device, fontSizes, colors } from '../styledVars';
+import { device, fontSizes, colors } from '../../styledVars';
 
 export const Flights: FC = () => {
   const location = useLocation();

@@ -1,9 +1,8 @@
 import Box from '@mui/material/Box';
 import type { FC } from 'react';
 
-import type { ITicket } from '../types';
-
-import { Item } from './Item';
+import type { ITicket } from '../../types';
+import { Item } from '../Item/Item';
 
 export const Items: FC<{ items: ITicket[] }> = ({ items = [] }) => (
   <Box

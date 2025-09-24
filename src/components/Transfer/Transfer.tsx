@@ -7,10 +7,10 @@ import { Formik, Form, Field } from 'formik';
 import type { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { TRANSFER_OPTIONS } from '../const';
-import { setTransferFilter } from '../redux/ducks/tickets/tickets';
-import type { RootState } from '../redux/root-reducer';
-import { device, fontSizes } from '../styledVars';
+import { TRANSFER_OPTIONS } from '../../const';
+import { setTransferFilter } from '../../redux/ducks/tickets/tickets';
+import type { RootState } from '../../redux/root-reducer';
+import { device, fontSizes } from '../../styledVars';
 
 export const Transfer: FC = () => {
   const dispatch = useDispatch();
