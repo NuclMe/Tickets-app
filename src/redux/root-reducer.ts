@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+// import { reducer } from './ducks/tickets/';
 import { reducer as ticketsReducer } from './ducks/tickets/tickets';
 
 const rootReducer = combineReducers({

@@ -2,10 +2,11 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import type { FC } from 'react';
 
-import { device, fontSizes, colors } from '../../styledVars';
-import type { ITicket } from '../../types';
-import { numberWithSpaces } from '../../utils';
-import { TableWrapper } from '../TableWrapper/TableWrapper';
+import { device, fontSizes, colors } from '../styledVars';
+import type { ITicket } from '../types';
+import { numberWithSpaces } from '../utils';
+
+import { TableWrapper } from './TableWrapper';
 
 export const Item: FC<ITicket> = ({ price, carrier, segments }) => (
   <Box

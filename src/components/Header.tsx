@@ -2,8 +2,8 @@ import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import type { FC } from 'react';
 
-import airplane from '../../assets/airplane.svg';
-import { colors } from '../../styledVars';
+import airplane from '../assets/airplane.svg';
+import { colors } from '../styledVars';
 
 export const Header: FC = () => (
   <Box

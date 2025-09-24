@@ -5,9 +5,9 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import type { FC } from 'react';
 
-import { device, fontSizes, colors } from '../../styledVars';
-import type { ISegment } from '../../types';
-import { getFlightTimeRange } from '../../utils';
+import { device, fontSizes, colors } from '../styledVars';
+import type { ISegment } from '../types';
+import { getFlightTimeRange } from '../utils';
 
 export const TableWrapper: FC<{ segments: ISegment }> = ({ segments }) => (
   <Table
