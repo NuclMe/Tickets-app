@@ -1,0 +1,46 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Flights Component > renders the Flights component via snapshot 1`] = `
+<div
+  class="MuiBox-root css-0"
+>
+  <div
+    class="MuiTabs-root css-s6nbqf-MuiTabs-root"
+  >
+    <div
+      class="MuiTabs-scroller MuiTabs-fixed css-s2t35c-MuiTabs-scroller"
+      style="overflow: hidden; margin-bottom: 0px;"
+    >
+      <div
+        class="MuiTabs-list MuiTabs-flexContainer css-hzcega-MuiTabs-list"
+        role="tablist"
+      >
+        <a
+          aria-selected="true"
+          class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected css-v9sirt-MuiButtonBase-root-MuiTab-root"
+          data-discover="true"
+          href="/cheapest"
+          role="tab"
+          tabindex="0"
+        >
+          САМЫЙ ДЕШЕВЫЙ
+        </a>
+        <a
+          aria-selected="false"
+          class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-1wut7dv-MuiButtonBase-root-MuiTab-root"
+          data-discover="true"
+          href="/fastest"
+          role="tab"
+          tabindex="-1"
+        >
+          САМЫЙ БЫСТРЫЙ
+        </a>
+      </div>
+      <span
+        class="MuiTabs-indicator css-1qltlow-MuiTabs-indicator"
+        style="left: 0px; width: 0px;"
+      />
+    </div>
+  </div>
+</div>
+`;
